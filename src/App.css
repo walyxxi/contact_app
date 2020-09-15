@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Container {
   display: flex;
   flex-direction: column;
+  width: 375px;
+  margin: auto;
+}
+
+.Navbar {
+  display: flex;
+  position: fixed;
+  width: inherit;
+  justify-content: space-between;
   align-items: center;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #41444b;
+  box-shadow: 0 8px 10px 0 rgba(10, 31, 68, 0.1);
+  border-radius: 0 0 8px 8px;
+}
+
+.Content {
+  margin-top: 50px;
+  padding: 16px;
+}
+
+.InputBox {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.InputSearch {
+  width: 100%;
+  height: 35px;
+  padding: 8px 8px 8px 30px;
+  font-size: 14px;
+  color: #41444b;
+  font-family: "Varela Round", sans-serif;
+  background-color: #e3e4e6;
+  border-radius: 8px;
+  border: none;
+}
+
+.InputSearch:focus {
+  outline: none;
+}
+
+.ContactList {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 3px 8px 10px 0px rgba(10, 31, 68, 0.1);
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-top: solid 1px #e3e4e6;
+  border-right: solid 1px #e3e4e6;
+}
+
+.ContactCaption {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  padding: 8px 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.ContactName {
+  color: #41444b;
+  font-weight: bolder;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ContactAge {
+  color: #727477;
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+.ContactEdit {
+  background-color: #e3e4e6;
+  border-radius: 0 0 0 8px;
+  height: 50px;
+}
+
+.AddBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: inherit;
+  position: fixed;
+  z-index: 100;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.FormAdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  height: 60%;
+  border-radius: 8px 8px 0 0;
+  color: #41444b;
+}
+
+.InputGroup {
+  width: 100%;
+}
+
+.Input {
+  width: 100%;
+  height: 35px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #41444b;
+  font-family: "Varela Round", sans-serif;
+  background-color: #e3e4e6;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.Input:focus {
+  outline: none;
 }
