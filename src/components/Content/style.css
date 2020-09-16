@@ -1,0 +1,64 @@
+.Content {
+  overflow-y: auto;
+  margin-top: 50px;
+  padding: 16px;
+}
+
+.InputBox {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.InputSearch {
+  width: 100%;
+  height: 35px;
+  padding: 8px 8px 8px 30px;
+  font-size: 14px;
+  color: #41444b;
+  font-family: "Varela Round", sans-serif;
+  background-color: #e3e4e6;
+  border-radius: 8px;
+  border: none;
+}
+
+.InputSearch:focus {
+  outline: none;
+}
+
+.ContactList {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 3px 8px 10px 0px rgba(10, 31, 68, 0.1);
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: solid 1px #e3e4e6;
+}
+
+.ContactCaption {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8px 12px;
+}
+
+.ContactName {
+  color: #41444b;
+  font-weight: bolder;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.ContactAge {
+  color: #727477;
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+.ContactEdit {
+  background-color: #e3e4e6;
+  border-radius: 0 0 0 8px;
+  height: 60px;
+  width: 46px;
+}
