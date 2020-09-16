@@ -2,6 +2,7 @@
   overflow-y: auto;
   margin-top: 50px;
   padding: 16px;
+  z-index: -999;
 }
 
 .InputBox {
@@ -32,6 +33,7 @@
   box-shadow: 3px 8px 10px 0px rgba(10, 31, 68, 0.1);
   overflow: hidden;
   margin-bottom: 16px;
+  background-color: #fff;
   border: solid 1px #e3e4e6;
 }
 
