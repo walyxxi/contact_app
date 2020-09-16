@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { MdSearch, MdModeEdit, MdDelete } from "react-icons/md";
 import styled from "styled-components";
@@ -25,6 +25,20 @@ const noImageURL =
 const Content = (props) => {
   const { datas, handleShowFormEdit, setDataEdit, deleteData } = props;
 
+  const [searchData, setSearchData] = useState("");
+
+  let filterData = datas;
+
+  if (searchData !== "") {
+    filterData = datas.filter(
+      (item) =>
+        (item.firstName + " " + item.lastName)
+          .toLowerCase()
+          .startsWith(searchData.trim().toLowerCase()) ||
+        item.lastName.toLowerCase().startsWith(searchData.trim().toLowerCase())
+    );
+  }
+
   const handleDeleteData = (id) => {
     const confirm = window.confirm("Are you sure?");
     if (confirm) {
@@ -36,14 +50,18 @@ const Content = (props) => {
     }
   };
 
+  const handleSearchData = (e) => {
+    setSearchData(e.target.value);
+  };
+
   return (
     <div className="Content">
       <div className="InputBox">
         <IconSearch size="20px" color="#cf7500" />
-        <input className="InputSearch" />
+        <input className="InputSearch" onChange={handleSearchData} />
       </div>
-      {datas &&
-        datas.map((data, idx) => (
+      {filterData &&
+        filterData.map((data, idx) => (
           <div className="ContactList" key={idx}>
             <img
               height="75px"
