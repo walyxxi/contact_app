@@ -78,27 +78,42 @@
 .ContactEdit {
   background-color: #e3e4e6;
   border-radius: 0 0 0 8px;
-  height: 50px;
+  height: 60px;
+  width: 46px;
 }
 
-.AddBox {
+.FormEl {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: inherit;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.FormTitle {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 48%;
+  left: 20px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #41444b;
+  font-size: 16px;
+  padding: 8px 10px 8px 8px;
 }
 
 .FormAdd {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 30px 20px;
   background-color: #fff;
-  height: 60%;
+  height: 50%;
   border-radius: 8px 8px 0 0;
   color: #41444b;
 }
@@ -122,4 +137,29 @@
 
 .Input:focus {
   outline: none;
+}
+
+.ButtonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ButtonCancel {
+  color: #fff;
+  background-color: #cf7500;
+  padding: 8px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ButtonSubmit {
+  color: #fff;
+  background-color: #41444b;
+  padding: 8px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  cursor: pointer;
 }
