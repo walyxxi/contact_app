@@ -2,12 +2,12 @@
   overflow-y: auto;
   margin-top: 50px;
   padding: 16px;
-  z-index: -999;
 }
 
 .InputBox {
   position: relative;
   margin-bottom: 16px;
+  z-index: 0;
 }
 
 .InputSearch {
