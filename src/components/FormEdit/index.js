@@ -11,15 +11,16 @@ const FormEdit = (props) => {
     age: 0,
     photo: "",
   });
-
   useEffect(() => {
-    setDataEdit({
-      id: data.id,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      age: data.age,
-      photo: data.photo,
-    });
+    if (data) {
+      setDataEdit({
+        id: data.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        age: data.age,
+        photo: data.photo,
+      });
+    }
   }, [data]);
 
   const { id, firstName, lastName, age, photo } = dataEdit;
@@ -35,7 +36,7 @@ const FormEdit = (props) => {
       firstName: dataEdit.firstName,
       lastName: dataEdit.lastName,
       age: parseInt(dataEdit.age),
-      photo: dataEdit.photo,
+      photo: dataEdit.photo || "N/A",
     }).then((res) => {
       handleShowFormEdit();
     });

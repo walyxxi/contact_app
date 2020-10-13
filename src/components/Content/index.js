@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { MdSearch, MdModeEdit, MdDelete } from "react-icons/md";
 import styled from "styled-components";
@@ -26,6 +26,18 @@ const Content = (props) => {
   const { datas, handleShowFormEdit, setDataEdit, deleteData } = props;
 
   const [searchData, setSearchData] = useState("");
+  const [loadingDot, setLoadingDot] = useState("");
+
+  useEffect(() => {
+    if (datas.length === 0) {
+      const interval = setInterval(() => {
+        setLoadingDot(
+          loadingDot.split("").length === 5 ? "" : loadingDot + "."
+        );
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, [datas, loadingDot]);
 
   let filterData = datas;
 
@@ -60,6 +72,11 @@ const Content = (props) => {
         <IconSearch size="20px" color="#cf7500" />
         <input className="InputSearch" onChange={handleSearchData} />
       </div>
+      {datas.length === 0 && (
+        <div className="Loading">
+          <b>{loadingDot}</b>
+        </div>
+      )}
       {filterData &&
         filterData.map((data, idx) => (
           <div className="ContactList" key={idx}>

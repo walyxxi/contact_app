@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux";
 import * as DataActions from "./actions";
 import FormAdd from "./components/FormAdd";
 import FormEdit from "./components/FormEdit";
+import { CSSTransition } from "react-transition-group";
 
 const App = (props) => {
   const { datas, actions } = props;
@@ -41,21 +42,32 @@ const App = (props) => {
       />
 
       {/* FormAdd */}
-      {showFormAdd && (
+      <CSSTransition
+        in={showFormAdd}
+        timeout={500}
+        classNames="transition"
+        unmountOnExit
+      >
         <FormAdd
           addData={actions.addData}
           handleShowFormAdd={handleShowFormAdd}
         />
-      )}
+      </CSSTransition>
 
       {/* FormEdit */}
-      {showFormEdit && dataEdit && (
+
+      <CSSTransition
+        in={showFormEdit}
+        timeout={500}
+        classNames="transition"
+        unmountOnExit
+      >
         <FormEdit
           data={dataEdit}
           editData={actions.editData}
           handleShowFormEdit={handleShowFormEdit}
         />
-      )}
+      </CSSTransition>
     </div>
   );
 };

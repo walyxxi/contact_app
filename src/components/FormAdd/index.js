@@ -19,7 +19,7 @@ const FormAdd = (props) => {
   };
 
   const handleSubmitData = (e) => {
-    addData(dataAdd).then((res) => {
+    addData({ ...dataAdd, photo: dataAdd.photo || "N/A" }).then((res) => {
       handleShowFormAdd();
       setDataAdd({
         firstName: "",
